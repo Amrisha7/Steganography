@@ -1,0 +1,47 @@
+from stegano import lsb
+from PIL import Image
+
+def encode_message(image_path, message, output_image_path):
+    # Load the original image
+    original_image = Image.open(image_path)
+
+    # Encode the message into the image
+    secret_image = lsb.hide(original_image, message)
+
+    # Save the image with the hidden message
+    secret_image.save(output_image_path)
+    print("Message successfully encoded in the image.")
+
+def decode_message(image_path):
+    # Load the image with the hidden message
+    secret_image = Image.open(image_path)
+
+    # Decode the hidden message
+    message = lsb.reveal(secret_image)
+
+    return message
+
+if __name__ == "__main__":
+    while True:
+        print("1. Encode message in an image")
+        print("2. Decode message from an image")
+        print("3. Exit")
+        choice = input("Select an option (1/2/3): ")
+
+        if choice == "1":
+            image_path = input("Enter the path of the image: ")
+            message = input("Enter the secret message: ")
+            output_image_path = input("Enter the output image path (with .png extension): ")
+            encode_message(image_path, message, output_image_path)
+
+        elif choice == "2":
+            image_path = input("Enter the path of the image with the hidden message: ")
+            decoded_message = decode_message(image_path)
+            print("Decoded Message: ", decoded_message)
+
+        elif choice == "3":
+            print("Exiting the program.")
+            break
+
+        else:
+            print("Invalid choice. Please choose a valid option.")
