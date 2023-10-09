@@ -23,8 +23,7 @@ This project implements steganography techniques to hide secret messages within 
 
 When you run the code the outcome after choosing the option will be asking you the image path where you want to hide the secret message and the path of the image after hiding the same.
 
-![Screenshot (277)1](https://github.com/Amrisha7/Steganography/assets/136724257/93a07d98-117f-4cdc-aa85-0b7b16be86a5)
-
+![steganooutput](https://github.com/Amrisha7/Steganography/assets/136724257/11c617ed-01bf-401e-b740-4b4e172966e8)
 
 ##  Usage
 The usage of your steganography project is to hide and extract secret messages within image files. Users can utilize your steganography tool for various purposes, such as privacy, security, or just for fun. Here's a breakdown of how users can use your steganography project:
